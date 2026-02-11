@@ -1,0 +1,70 @@
+body {
+    background-image: url("/field.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;
+
+}
+
+
+div {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.img-container2 {
+    gap: 2em;
+}
+
+.img-container3 {
+    gap: 1em;
+}
+
+.defense {
+    gap: 2.5em;
+}
+
+.fifa-img {
+    width: 50px;
+}
+
+.fifa-img1 {
+    width: 50px;
+    position: relative;
+    bottom: 2em;
+}
+
+.fifa-img2 {
+    width: 50px;
+    position: relative;
+    top: 8em;
+}
+
+.fifa-img3 {
+    width: 50px;
+    position: relative;
+    top: 2em;
+}
+
+
+
+
+.reserve-div {
+    width: 100%;
+    background: linear-gradient(to bottom, #1a1a1a, #0f0f0f);
+    padding: 20px 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+
+
+}
+
+button{
+     background: linear-gradient(to bottom, #0f2a3d, #091a26);
+  color: white;
+  padding: 10px 14px;
+  cursor: pointer;
+  border-radius: 6px 0 0 6px;
+  font-weight: bold;
+  box-shadow: -2px 2px 8px rgba(0,0,0,0.5);
+}
