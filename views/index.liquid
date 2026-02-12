@@ -20,25 +20,52 @@
   </div>
   <img class="fifa-img2" src="/fifa3.png">
   <div class="defense">
-  <img class="fifa-img3" src="/fifa3.png">
+    <img class="fifa-img3" src="/fifa3.png">
+    <img class="fifa-img" src="/fifa3.png">
+  </div>
+</div>
+
+<button class="button-res">Res</button>
+<button class="button-filt">Filt</button>
+<div class="reserve-div">
   <img class="fifa-img" src="/fifa3.png">
+  <img class="fifa-img" src="/fifa3.png">
+  <img class="fifa-img" src="/fifa3.png">'
+  <img class="fifa-img" src="/fifa3.png">
+  <img class="fifa-img" src="/fifa3.png">
+  <img class="fifa-img" src="/fifa3.png">
+  <img class="fifa-img" src="/fifa3.png">'
+</div>
+
+ {% comment %} <div class="filt-div">
+  <input class="input1" type="text" id="zoek-postnl-punten" placeholder="Zoek op plaats, straat of postcode">
+  <button class="button-search">Zoeken</button>
+</div>  {% endcomment %}
+
+<div class="filt-div">
+  <form method="GET" action="/">
+    <input 
+      class="input1" 
+      type="search" 
+      name="filter[favorite_color][_eq]" 
+      placeholder="Zoek op kleur (bijv. rood, blauw)"
+    >
+    <button class="button-search" type="submit">Zoeken</button>
+  </form>
+  
+  <div class="filtered-results">
+    {% for person in persons %}
+      <div class="student-card">
+        <img class="fifa-img" src="/student-{{ person.id }}.png" onerror="this.src='/fifa.png'">
+        <p>{{ person.name }}</p>
+        <p>{{ person.favorite_color }}</p>
+      </div>
+    {% endfor %}
   </div>
 </div>
 
 
 
-<button>Res ▲</button>
-<button>Filt</button>
-<div class="reserve-div">
-      
-      <img class="fifa-img" src="/fifa3.png">
-      <img class="fifa-img" src="/fifa3.png">
-      <img class="fifa-img" src="/fifa3.png">'
-      <img class="fifa-img" src="/fifa3.png">
-      <img class="fifa-img" src="/fifa3.png">
-      <img class="fifa-img" src="/fifa3.png">
-      <img class="fifa-img" src="/fifa3.png">'
-</div>
-</section>
+<script src="script.js"></script>
 
 {% render 'partials/foot.liquid' %}
