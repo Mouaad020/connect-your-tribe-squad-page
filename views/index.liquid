@@ -37,34 +37,22 @@
   <img class="fifa-img" src="/fifa3.png">'
 </div>
 
- {% comment %} <div class="filt-div">
+ <div class="filt-div">
   <input class="input1" type="text" id="zoek-postnl-punten" placeholder="Zoek op plaats, straat of postcode">
   <button class="button-search">Zoeken</button>
-</div>  {% endcomment %}
+</div>  
 
-<div class="filt-div">
-  <form method="GET" action="/">
-    <input 
-      class="input1" 
-      type="search" 
-      name="filter[favorite_color][_eq]" 
-      placeholder="Zoek op kleur (bijv. rood, blauw)"
-    >
-    <button class="button-search" type="submit">Zoeken</button>
-  </form>
-  
-  <div class="filtered-results">
+ <div class="filtered-results">
     {% for person in persons %}
       <div class="student-card">
-        <img class="fifa-img" src="/student-{{ person.id }}.png" onerror="this.src='/fifa.png'">
+        <img class="fifa-img" src=" {{ person.mugshot }}" onerror="this.src='/fifa.png'">
         <p>{{ person.name }}</p>
         <p>{{ person.favorite_color }}</p>
       </div>
     {% endfor %}
-  </div>
-</div>
+  </div> 
 
-
+  <a href="/?fav_hobby=Gamen"> </a>
 
 <script src="script.js"></script>
 

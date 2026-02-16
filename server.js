@@ -84,7 +84,6 @@ app.get('/', async function (request, response) {
 
 
 
-
 // Maak een POST route voor de index; hiermee kun je bijvoorbeeld formulieren afvangen
 app.post('/', async function (request, response) {
   // Je zou hier data kunnen opslaan, of veranderen, of wat je maar wilt
@@ -115,3 +114,26 @@ app.listen(app.get('port'), function () {
   // Toon een bericht in de console en geef het poortnummer door
   console.log(`Application started on http://localhost:${app.get('port')}`)
 })
+
+
+
+let messagesArray = []
+
+app.get('/berichten', async function (request, response) {
+   response.render('messages.liquid', {
+    messages: messagesArray
+  })
+})
+
+
+// Maak een POST route voor de index; hiermee kun je bijvoorbeeld formulieren afvangen
+app.post('/berichten', async function (request, response) {
+
+  console.log(request.body.message)
+  
+  messagesArray.push(request.body.message)
+  // Je zou hier data kunnen opslaan, of veranderen, of wat je maar wilt
+  // Er is nog geen afhandeling van POST, redirect naar GET op /
+   response.redirect(303, "/berichten")
+})
+
